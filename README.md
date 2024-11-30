@@ -1,2 +1,2 @@
 # EIE341_Analog_Circuit_Report
-Report of EIE341 Analog Circuit Experiment Class at UCTM in LaTex Format
+Report of EIE341 Analog Circuit Experiment Class at UCTM in LaTeX Format
