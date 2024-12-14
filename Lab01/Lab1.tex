@@ -11,10 +11,10 @@
     \item Breadboard
     \item DC power supply
     \item Digital Multi-Meter
-    \item Diode (1N4148)
+    \item \hyperref[1N4148]{Diode (1N4148)}
     \item Resistors
-    \item Schottky didode (SR160)
-    \item Zener diode (1N4728A)
+    \item \hyperref[SR160]{Schottky didode (SR160)}
+    \item \hyperref[1N4728A]{Zener diode (1N4728A)}
 \end{itemize}
 
 \section{Introduction}
@@ -61,43 +61,75 @@ In this experiment, we are going to learn the features and properties of differe
     \subsection{Circuit Diagram}
     \begin{figure}[h]
 
-        \begin{minipage}[h]{0.47\linewidth}
+        \begin{subfigure}[h]{0.47\textwidth}
         \begin{center}
-            \includesvg[width=1\linewidth]{Lab01/Lab1a.drawio.svg} 
+            \includesvg[width=1\linewidth]{Lab01/Lab1a.drawio.svg}
+            \caption{}
             \label{Lab1a}
-            \end{center} 
-        \end{minipage}
+        \end{center} 
+        \end{subfigure}
     \hfill
     \vspace{0.2 cm}
-        \begin{minipage}[h]{0.47\linewidth}
+        \begin{subfigure}[h]{0.47\textwidth}
         \begin{center}
-            \includesvg[width=1\linewidth]{Lab01/Lab1b.drawio.svg} 
+            \includesvg[width=1\linewidth]{Lab01/Lab1b.drawio.svg}
+            \caption{}
             \label{Lab1b}
-            \end{center}
-        \end{minipage}
+        \end{center}
+        \end{subfigure}
     \vfill
     \vspace{0.2 cm}
-        \begin{minipage}[h]{0.47\linewidth}
+        \begin{subfigure}[h]{0.47\textwidth}
         \begin{center}
             \includesvg[width=1\linewidth]{Lab01/Lab1c.drawio.svg} 
+            \caption{}
             \label{Lab1c}
-            \end{center}
-        \end{minipage}
+        \end{center}
+        \end{subfigure}
     \hfill
-        \begin{minipage}[h]{0.47\linewidth}
+        \begin{subfigure}[h]{0.47\textwidth}
         \begin{center}
-            \includesvg[width=1\linewidth]{Lab01/Lab1d.drawio.svg} 
+            \includesvg[width=1\linewidth]{Lab01/Lab1d.drawio.svg}
+            \caption{}
             \label{Lab1d}
         \end{center}
-        \end{minipage}
+        \end{subfigure}
     \caption{Simlpe Diode Circuits}
     \label{SDC}
 
     \end{figure}
 \FloatBarrier
+The R shown in the circuits represents 1k$\Omega$. D is the unlabelled diode.
 
 
 \section{Detailed Procedures}
+    \subsection{Analyzation}
+    First, we analyse the relationship between $V_s$ and $V_x$ and the theoretical value of each circuit.\par
+    The relationship between $V_i$ and $V_o$ is:
+    \begin{itemize}
+        \item In figure. \ref{Lab1a}:
+            \begin{itemize}
+                \item When $V_s \ge V_\gamma$, D is on\par
+                    $V_x = \frac{2}{3}V_s - V_\gamma$
+                \item When $V_s \le V_\gamma$, D is off\par
+                    $V_x = 0$
+            \end{itemize}
+        \item In figure. \ref{Lab1b}:
+            \begin{itemize}
+                \item 
+            \end{itemize}
+        \item In figure. \ref{Lab1c}:
+            \begin{itemize}
+                \item 
+            \end{itemize}
+        \item In figure. \ref{Lab1d}:
+            \begin{itemize}
+                \item 
+            \end{itemize}
+    \end{itemize}
+
+    
+    \subsection{Procedures}
 
 
 \section{Discussion}
