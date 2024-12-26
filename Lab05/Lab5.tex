@@ -3,13 +3,14 @@
 
 \section{Objectives}
 \begin{itemize}
-    \item 
-    \item 
+    \item To test the different operation modes of a npn BJT
+    \item To test the different operation modes of a pnp BJT
 \end{itemize}
 
 \section{Materials}
 \begin{itemize}
     \item \hyperref[2N3904_1]{BJT (2N3904)}
+    \item \hyperref[2N3906_1]{BJT (2N3906)}
     \item Breadboard
     \item DC power supply
     \item Digital Multi-Meter
@@ -17,17 +18,113 @@
 \end{itemize}
 
 \section{Introduction}
+In this experiment, we are going to learn operation modes of BJT. A DC source, resistors, a pnp BJT and an npn BJT will be used to construct the circuits, the digital multi-meter is used to measure $V_i$ and $V_o$.\par
+    \subsection{BJT}
+    \begin{itemize}
+        \item \textbf{Differences between PNP and NPN BJT}\par
+            PNP and NPN BJT are two types of transistors that have different structure and the polarity of their terminals.\par
+            PNP transistor consists of a layer of N-doped semi-conductor between two layers of P-doped semi-conductor, NPN transistor has the structure of opposite polarity semi-conductors. Therefore, the majority carriers of PNP BJT are holes and those of NPN are electrons.\par
+            Due to the structure of BJT, the PNP transistor's emitter-base junction forward-biased when the base is negative with respect to the emitter. Conversely, the NPN transistor, the emitter-base junction becomes forward-biased when the base is positive relative to the emitter.        
+    \end{itemize}
+    
+    \subsection{Specification}
+        \begin{itemize}
+            \item \hyperref[2N3904_1]{\textbf{NPN BJT (2N3904)}}
+            \item \hyperref[2N3906_1]{\textbf{PNP BJT (2N3906)}}
+        \end{itemize}
+    \FloatBarrier
+    
     \subsection{Circuit Diagram}
+    \begin{figure}[h]
+                    \centering
+                    \begin{subfigure}[h]{0.45\textwidth}
+                        \centering
+                        \includesvg[width=0.9\linewidth]{Lab05/Lab5a.drawio.svg}
+                        \caption{NPN BJT Circuit}
+                        \label{lab5a}
+                    \end{subfigure}
+                    \hfill
+                    \begin{subfigure}[h]{0.45\textwidth}
+                        \centering
+                        \includesvg[width=0.7\linewidth]{Lab05/Lab5b.drawio.svg}
+                        \caption{PNP BJT Circuit}
+                        \label{lab5b}
+                    \end{subfigure}
+    \caption{Operation modes of: (a) a npn BJT circuit; (b) a pnp BJT circuit.}
+    \label{lab5f}
+    \end{figure}
+    \FloatBarrier
 
 
 \section{Detailed Procedures}
     \subsection{Analyzation}
-
-
-    \subsection{Procedures}
+    First, we analyze the relationship between $V_i$ and $V_o$ in the circuits.\par
+    For Fig.\ref{lab5a},\par
+    \begin{equation}
+        \begin{cases}
+            V_i-i_b\cdot56k-0.6=0\\
+            V_{CE}=V_o\\
+            i_b = \frac{V_i-0.6}{56k}\\
+            V_{CE}=5-\beta i_b\cdot 1k
+        \end{cases}
+    \label{l5eq1}
+    \end{equation}
+    From Equation.\ref{l5eq1}, we can obtain:\par
+    \begin{equation*}
+        5-\beta \cdot \frac{V_i-0.6}{56k}\cdot 1k=V_o
+    \end{equation*}
+    For Fig.\ref{lab5b},\par
+    \begin{equation}
+        \begin{cases}
+            5-0.6-i_b\cdot56k-V_i=0\\
+            5\cdot\beta i_b\cdot1k=V_o\\
+            i_b = \frac{5-0.6-V_i}{56k}\\
+        \end{cases}
+    \label{l5eq2}
+    \end{equation}
+    From Equation.\ref{l5eq2}, we can obtain:\par
+    \begin{equation*}
+        (1+\beta) i_b\cdot 1k=V_o
+    \end{equation*}
 
     
+    \subsection{Procedures}
+    We used digital multi-meter to measure $V_0$ when $V_i$ varies:\par
+    \begin{itemize}
+        \item For Fig.\ref{lab5a},\par
+            \begin{table}[h]
+            \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+                \hline
+                Vi   & 0    & 0.25 & 0.5   & 0.6   & 0.75  & 0.82  & 1     & 1.5   & 1.6   \\ \hline
+                Vo   & 4.91 & 4.91 & 4.91  & 4.78  & 4.22  & 3.85  & 2.25  & 0.24  & 0.24  \\ \hline
+                Theo & 5    & 5    & 5     & 5     & 4.46  & 4.21  & 3.57  & 0.2   & 0.2   \\ \hline
+                Vi   & 1.65 & 1.7  & 1.75  & 1.8   & 1.9   & 2     & 3     & 4     & 5     \\ \hline
+                Vo   & 0.21 & 0.2  & 0.191 & 0.181 & 0.171 & 0.163 & 0.123 & 0.106 & 0.095 \\ \hline
+                Theo & 0.2  & 0.2  & 0.2   & 0.2   & 0.2   & 0.2   & 0.2     & 0.2     & 0.2     \\ \hline
+            \end{tabular}
+            \end{table}
+            \FloatBarrier
+        \item For Fig.\ref{lab5b},\par
+            \begin{table}[h]
+            \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+                \hline
+                Vi   & 0    & 0.65 & 1.41 & 2.09 & 2.48 & 2.98  & 3.13  & 3.26 & 3.48 \\ \hline
+                Vo   & 4.83 & 4.82 & 4.81 & 4.79 & 4.77 & 4.8  & 4.09  & 3.69 & 3    \\ \hline
+                Theo & 4.8  & 4.8  & 4.8  & 4.8  & 4.8  & 5.10  & 4.56  & 4.09 & 3.30 \\ \hline
+                Vi   & 3.61 & 3.76 & 3.92 & 4.06 & 4.19 & 4.21  & 4.49  & 5    &      \\ \hline
+                Vo   & 2.55 & 2.04 & 1.5  & 1.03 & 0.65 & 0.587 & 0.004 & 0    &      \\ \hline
+                Theo & 2.84 & 2.30 & 1.72 & 1.22 & 0.75 & 0.68  & 0     & 0    &      \\ \hline
+            \end{tabular}
+            \end{table}
+            \FloatBarrier
+    \end{itemize}
+    
 \section{Discussion}
-
+By comparing experimental results with analyzed relationship, we can conclude that it is not all the results precisely equal to the results expected, it is because BJT has three different modes, cut-off, non-saturation, and saturation. Different mode has different relationship, so the results cannot be predicted by only one equation.\par
+Because we did not measure $V_{BE}$ while we were conducting the experiment, it is impossible to accurately distinguish the time when the BJT's mode changes.\par
+Furthermore, the actual experimental $V_\gamma$ is not the same as we used in theoretical calculation, and the resistance of resistors cannot be exactly same as the circuit required. These errors results in differences in final measured data.
 
 \section{Conclusion}
+In conclusion, during this experiment, I learned more about different BJT and understood the cause of the expected result and practical result. The results of the experiment cannot always be predicted using a single equation because the BJT transitions through different modes (cutoff, active, and saturation) during operation. Moreover, each mode has distinct relationships, and the equations must be applied based on the specific mode in which the transistor is operating. This highlights the importance of understanding the operational regions of BJTs for accurate circuit analysis and design.
