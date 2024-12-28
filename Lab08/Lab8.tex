@@ -26,13 +26,19 @@
         \label{l8f}
     \end{figure}
     \FloatBarrier
-
+In Fig.\ref{l8f}, $V^+=12V$, $R_D=470\Omega$, $V_{TN}=1.40V$, $K_n=80A/V^2$.
 \section{Detailed Procedures}
     \subsection{Analyzation}
-
+    First, we find the relationship between $V_i$ and $V_{DS}$:
+    \begin{equation}
+        \begin{cases}
+            12-R_DK_n(V_i-1.4)^2=V_{DS} & V_i>1.4\\
+            \frac{12}{1+R_DK_n+2R_DK_n(V_i-1.4)}=V_{DS} & V_i\le1.4\\
+        \end{cases}
+    \end{equation}
 
     \subsection{Procedures}
-
+    
     
 \section{Discussion}
 
