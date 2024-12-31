@@ -28,7 +28,7 @@
         \label{l7f}
     \end{figure}
     \FloatBarrier
-In Fig.\ref{lab7f}, $V_{BEQ}$ = 0.6 V, $\beta$ = 160, $R_s$ = 10k$\Omega$, $R_B$ = 56k$\Omega$, $R_E$ = 1k$\Omega$.
+In Fig.\ref{l7f}, $V_{BEQ}$ = 0.6 V, $\beta$ = 160, $R_s$ = 10k$\Omega$, $R_B$ = 56k$\Omega$, $R_E$ = 1k$\Omega$.
 
 \section{Detailed Procedures}
     \subsection{Analyzation}
@@ -53,7 +53,7 @@ In Fig.\ref{lab7f}, $V_{BEQ}$ = 0.6 V, $\beta$ = 160, $R_s$ = 10k$\Omega$, $R_B$
     \end{itemize}
     \FloatBarrier
     To analysis Fig.\ref{l7ac} and Fig.\ref{l7dc} with given data, we can obtain:\par
-    In Fig.\ref{l6ac}\par
+    In Fig.\ref{l7ac}\par
     \begin{equation}
         \begin{cases}
             R_{TH} = R_a//R_b\\
@@ -63,21 +63,83 @@ In Fig.\ref{lab7f}, $V_{BEQ}$ = 0.6 V, $\beta$ = 160, $R_s$ = 10k$\Omega$, $R_B$
         \end{cases}
     \end{equation}
     
-    In Fig.\ref{l6dc}\par
+    In Fig.\ref{l7dc}\par
     \begin{equation}
         \begin{cases}
-            A_v = \frac{V_i}{V_o} = \\
-            R_i = R_B = 56k\\
-            R_o = R_E//R_L = 1m\\
+            A_v = \frac{V_i}{V_o} = \frac{I_B(1+\beta)(R_E//R_L)}{r_\pi+(1+\beta)(R_E//R_L)}\frac{R_i}{R_i+R_S}\\
+            R_i = R_B\\
+            R_o = R_E//R_L\\
         \end{cases}
-    \label{l6eq1}
+    \label{l7eq1}
     \end{equation}
-    
+
+    \subsubsection{DC Analysis}
+    \begin{equation*}
+        \begin{cases}
+            I_{BQ}=52.53\mu A\\
+            I_{EQ}=8.4573mA\\
+            I_{CQ}=8.4048mA\\
+            V_B=9.0583V\\
+            V_C=12V\\
+            V_E=8.4581V\\
+            V_{CEQ}=3.5419V\\
+        \end{cases}
+    \end{equation*}
+    \FloatBarrier
     
     \subsection{Procedures}
+    Construct the circuit in Fig.\ref{l7f} with an npn BJT and $R_L$ = 300k$\Omega$.
+        \subsubsection{DC Analysis}
+        Short $v_i$ to the ground and use the digital multi-meter to measure the three terminal voltages of the BJT $V_B$, $V_C$, and $V_E$:\\
+            \begin{equation}
+                \begin{cases}
+                    V_B=10.10\\
+                    V_C=12\\
+                    V_E=9.505\\
+                \end{cases}
+            \label{L7Eq1}
+            \end{equation}
+            From Eq.\ref{L7Eq1}, we can obtain:\\
+            \begin{equation}
+                \begin{cases}
+                    I_{BQ}=\frac{V_C-V_B}{R_B}=33.929\mu A\\
+                    I_{EQ}=\frac{V_E}{R_E}=9.505mA\\
+                    I_{CQ}=I_{EQ}-I_{BQ}=9.471mA\\
+                    \beta=279.14\\
+                \end{cases}
+            \end{equation}
+        The experimental data differs from theoretical calculation with all data is reduced. It might be caused by unideal power supplied or unideal resistors.
 
+        \subsubsection{AC Analysis}
+        \begin{itemize}
+            \item Voltage Gain: Let $v_i$ to be a sinusoidal signal (1000 Hz, 5V peak) and $R_L$ = 300k$\Omega$.
+                \begin{table}[h]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|}
+                    \hline
+                    Vib & 0.9372     & 0.7239      & 0.4901    & 0.24     \\ \hline
+                    Vo  & 0.9425     & 0.7072      & 0.4824    & 0.2411   \\ \hline
+                    Av  & 1.00565514 & 0.976930515 & 0.9842889 & 1.004583 \\ \hline
+                \end{tabular}
+                \end{table}
+                \FloatBarrier
+                When the BJT turns to saturation, the distortion occurs. $R_B$ should be increased to enlarge the linear amplification range.
+            \item Input \& Output Resistance: Let $v_i$ to be  a 1000 Hz sinusoidal signal with the amplitude of 1 V.
+                \begin{table}[h]
+                \centering
+                \begin{tabular}{|cc|cc|}
+                    \hline
+                    \multicolumn{2}{|c|}{Rs=10K,Ri=10.3K}     & \multicolumn{2}{c|}{Ro=36.4}                             \\ \hline
+                    \multicolumn{1}{|c|}{Vi=1.15} & Vib=0.578 & \multicolumn{1}{c|}{RL=300K,Vo=0.5883} & RL=1K,Vo=0.5683 \\ \hline
+                \end{tabular}
+                \end{table}
+                \FloatBarrier
+        \end{itemize}
+        
     
 \section{Discussion}
-
+    Some measured data are missing due to inappropriate saving in this experiment report. Using other groups data instead.
 
 \section{Conclusion}
+    In this experiment, we implemented the common-collector BJT amplifier circuit. This experiment deepen our understanding of BJT circuit, the common-collector circuit is characterized by the connection of the base and collector through a resistor. By analyzing the amplifier's performance through oscilloscope, we learn about the role of biasing, the effects of input and load resistance.\par
+    Overall, this experiment provided valuable practical considerations for designing amplifiers in real-world applications, particularly in minimizing signal distortion and optimizing performance.

@@ -38,9 +38,133 @@ In Fig.\ref{l8f}, $V^+=12V$, $R_D=470\Omega$, $V_{TN}=1.40V$, $K_n=80A/V^2$.
     \end{equation}
 
     \subsection{Procedures}
+    \subsubsection{Part I}
+    Construct the circuit in Fig. 8.1 with a N-channel enhancement MOSFET (2N7000), $V^+ = 12.0V,R_D = 470Ω$.
     
+\begin{table}[h]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Vi      & 0.5         & 0.65        & 0.98        & 1.1         & 1.21        & 1.31     & 1.45     & 1.59     & 1.75     & 1.86     & 1.9      \\ \hline
+V_{DS}  & 11.7        & 11.79       & 11.78       & 11.79       & 11.77       & 11.73    & 11.49    & 10.65    & 8.05     & 4.9      & 3.89     \\ \hline
+V_{R_D} & 0.0055      & 0.005       & 0.0058      & 0.007       & 0.0156      & 0.0502   & 0.292    & 1.17     & 3.79     & 6.95     & 8.1      \\ \hline
+I_D     & 1.17021E-05 & 1.06383E-05 & 1.23404E-05 & 1.48936E-05 & 3.31915E-05 & 0.000107 & 0.000621 & 0.002489 & 0.008064 & 0.014787 & 0.017234 \\ \hline
+Vi      & 1.94        & 1.96        & 2           & 2.15        & 2.28        & 2.4      & 2.525    & 2.66     & 2.73     & 3.05     & 3.2      \\ \hline
+V_{DS}  & 2.4         & 1.6         & 0.7         & 0.222       & 0.175       & 0.15     & 0.137    & 0.125    & 0.121    & 0.107    & 0.102    \\ \hline
+V_{R_D} & 9.45        & 10.05       & 11.2        & 11.77       & 11.82       & 11.848   & 11.86    & 11.87    & 11.87    & 11.89    & 11.89    \\ \hline
+I_D     & 0.020106383 & 0.021382979 & 0.023829787 & 0.025042553 & 0.025148936 & 0.025209 & 0.025234 & 0.025255 & 0.025255 & 0.025298 & 0.025298 \\ \hline
+\end{tabular}%
+}
+\end{table}
+\FloatBarrier
+    Relationship between $V_{GS}$ and $V_{DS}$:\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/L8_DCF1.png}
+        \caption{Relationship between $V_{GS}$ and $V_{DS}$}
+        \label{l8dctf1}
+    \end{figure}
+    \FloatBarrier
+    Relationship between $V_{GS}$ and $I_D$:\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/L8_DCF2.png}
+        \caption{Relationship between $V_{GS}$ and $I_D$}
+        \label{l8dctf2}
+    \end{figure}
+    \FloatBarrier
+    Relationship between $V_{GS}$ and $\sqrt{I_D}$:\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.65\linewidth]{Lab08/L8_DCF3.png}
+        \caption{Relationship between $V_{GS}$ and $\sqrt{I_D}$}
+        \label{L8dctf3}
+    \end{figure}
+\FloatBarrier
+    From these figures we can conclude that $V_{TH}$ = 1.2V and $K_n$ =  0.067 $A/V^2$.
+
+    \subsubsection{Part II}
+    Construct the circuit in Fig. 8.1 with a N-channel enhancement MOSFET (2N7000), $R_D = 470\Omega$.
     
-\section{Discussion}
+\begin{table}[h]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|lllllllllll|}
+\hline
+\multicolumn{11}{|c|}{Vi=1.6}                                                                                                                                                                                                                                                                                                                         \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.17}        & \multicolumn{1}{l|}{0.34}        & \multicolumn{1}{l|}{0.42}        & \multicolumn{1}{l|}{0.78}        & \multicolumn{1}{l|}{1.07}     & \multicolumn{1}{l|}{1.56}     & \multicolumn{1}{l|}{2.22}     & \multicolumn{1}{l|}{2.67}     &          \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.012}       & \multicolumn{1}{l|}{0.032}       & \multicolumn{1}{l|}{0.042}       & \multicolumn{1}{l|}{0.137}       & \multicolumn{1}{l|}{0.299}    & \multicolumn{1}{l|}{0.697}    & \multicolumn{1}{l|}{1.31}     & \multicolumn{1}{l|}{1.74}     &          \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.156}       & \multicolumn{1}{l|}{0.305}       & \multicolumn{1}{l|}{0.36}        & \multicolumn{1}{l|}{0.64}        & \multicolumn{1}{l|}{0.76}     & \multicolumn{1}{l|}{0.831}    & \multicolumn{1}{l|}{0.873}    & \multicolumn{1}{l|}{0.895}    &          \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.000331915} & \multicolumn{1}{l|}{0.000648936} & \multicolumn{1}{l|}{0.000765957} & \multicolumn{1}{l|}{0.001361702} & \multicolumn{1}{l|}{0.001617} & \multicolumn{1}{l|}{0.001768} & \multicolumn{1}{l|}{0.001857} & \multicolumn{1}{l|}{0.001904} &          \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{2.9}         & \multicolumn{1}{l|}{3.3}         & \multicolumn{1}{l|}{4.08}        & \multicolumn{1}{l|}{4.95}        & \multicolumn{1}{l|}{5.36}        & \multicolumn{1}{l|}{5.64}     & \multicolumn{1}{l|}{5.96}     & \multicolumn{1}{l|}{6.44}     & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{1.93}        & \multicolumn{1}{l|}{2.31}        & \multicolumn{1}{l|}{3.07}        & \multicolumn{1}{l|}{3.89}        & \multicolumn{1}{l|}{4.28}        & \multicolumn{1}{l|}{4.56}     & \multicolumn{1}{l|}{4.86}     & \multicolumn{1}{l|}{5.33}     & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{0.905}       & \multicolumn{1}{l|}{0.92}        & \multicolumn{1}{l|}{0.95}        & \multicolumn{1}{l|}{0.982}       & \multicolumn{1}{l|}{0.999}       & \multicolumn{1}{l|}{1.01}     & \multicolumn{1}{l|}{1.022}    & \multicolumn{1}{l|}{1.04}     & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.001925532} & \multicolumn{1}{l|}{0.001957447} & \multicolumn{1}{l|}{0.002021277} & \multicolumn{1}{l|}{0.002089362} & \multicolumn{1}{l|}{0.002125532} & \multicolumn{1}{l|}{0.002149} & \multicolumn{1}{l|}{0.002174} & \multicolumn{1}{l|}{0.002213} & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{11}{|c|}{Vi=1.7}                                                                                                                                                                                                                                                                                                                         \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{0.01}        & \multicolumn{1}{l|}{0.3}         & \multicolumn{1}{l|}{0.66}        & \multicolumn{1}{l|}{1.11}        & \multicolumn{1}{l|}{1.62}        & \multicolumn{1}{l|}{2.31}     & \multicolumn{1}{l|}{2.94}     & \multicolumn{1}{l|}{3.5}      & \multicolumn{1}{l|}{3.97}     &          \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.012}       & \multicolumn{1}{l|}{0.035}       & \multicolumn{1}{l|}{0.072}       & \multicolumn{1}{l|}{0.14}        & \multicolumn{1}{l|}{0.4}      & \multicolumn{1}{l|}{0.86}     & \multicolumn{1}{l|}{1.36}     & \multicolumn{1}{l|}{1.77}     &          \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{0.01}        & \multicolumn{1}{l|}{0.284}       & \multicolumn{1}{l|}{0.621}       & \multicolumn{1}{l|}{1.04}        & \multicolumn{1}{l|}{1.48}        & \multicolumn{1}{l|}{1.91}     & \multicolumn{1}{l|}{2.05}     & \multicolumn{1}{l|}{2.13}     & \multicolumn{1}{l|}{2.16}     &          \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0}           & \multicolumn{1}{l|}{0.000604255} & \multicolumn{1}{l|}{0.001321277} & \multicolumn{1}{l|}{0.002212766} & \multicolumn{1}{l|}{0.003148936} & \multicolumn{1}{l|}{0.004064} & \multicolumn{1}{l|}{0.004362} & \multicolumn{1}{l|}{0.004532} & \multicolumn{1}{l|}{0.004596} &          \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{4.44}        & \multicolumn{1}{l|}{5.04}        & \multicolumn{1}{l|}{5.59}        & \multicolumn{1}{l|}{6.16}        & \multicolumn{1}{l|}{6.76}        & \multicolumn{1}{l|}{7.26}     & \multicolumn{1}{l|}{7.6}      & \multicolumn{1}{l|}{7.78}     & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{2.18}        & \multicolumn{1}{l|}{2.72}        & \multicolumn{1}{l|}{3.2}         & \multicolumn{1}{l|}{3.72}        & \multicolumn{1}{l|}{4.28}        & \multicolumn{1}{l|}{4.7}      & \multicolumn{1}{l|}{5.05}     & \multicolumn{1}{l|}{5.2}      & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{2.2}         & \multicolumn{1}{l|}{2.25}        & \multicolumn{1}{l|}{2.31}        & \multicolumn{1}{l|}{2.35}        & \multicolumn{1}{l|}{2.4}         & \multicolumn{1}{l|}{2.45}     & \multicolumn{1}{l|}{2.47}     & \multicolumn{1}{l|}{2.49}     & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.004680851} & \multicolumn{1}{l|}{0.004787234} & \multicolumn{1}{l|}{0.004914894} & \multicolumn{1}{l|}{0.005}       & \multicolumn{1}{l|}{0.005106383} & \multicolumn{1}{l|}{0.005213} & \multicolumn{1}{l|}{0.005255} & \multicolumn{1}{l|}{0.005298} & \multicolumn{1}{l|}{}         &          \\ \hline
+\multicolumn{11}{|c|}{Vi=1.8}                                                                                                                                                                                                                                                                                                                         \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{0.3}         & \multicolumn{1}{l|}{0.52}        & \multicolumn{1}{l|}{0.74}        & \multicolumn{1}{l|}{1.05}        & \multicolumn{1}{l|}{1.31}        & \multicolumn{1}{l|}{1.88}     & \multicolumn{1}{l|}{2.12}     & \multicolumn{1}{l|}{2.47}     & \multicolumn{1}{l|}{2.99}     & 3.59     \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{0.007}       & \multicolumn{1}{l|}{0.015}       & \multicolumn{1}{l|}{0.023}       & \multicolumn{1}{l|}{0.035}       & \multicolumn{1}{l|}{0.046}       & \multicolumn{1}{l|}{0.075}    & \multicolumn{1}{l|}{0.089}    & \multicolumn{1}{l|}{0.112}    & \multicolumn{1}{l|}{0.157}    & 0.244    \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{0.291}       & \multicolumn{1}{l|}{0.5}         & \multicolumn{1}{l|}{0.71}        & \multicolumn{1}{l|}{1.01}        & \multicolumn{1}{l|}{1.26}        & \multicolumn{1}{l|}{1.8}      & \multicolumn{1}{l|}{2.03}     & \multicolumn{1}{l|}{2.35}     & \multicolumn{1}{l|}{2.82}     & 3.34     \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.000619149} & \multicolumn{1}{l|}{0.00106383}  & \multicolumn{1}{l|}{0.001510638} & \multicolumn{1}{l|}{0.002148936} & \multicolumn{1}{l|}{0.002680851} & \multicolumn{1}{l|}{0.00383}  & \multicolumn{1}{l|}{0.004319} & \multicolumn{1}{l|}{0.005}    & \multicolumn{1}{l|}{0.006}    & 0.007106 \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{4.19}        & \multicolumn{1}{l|}{4.89}        & \multicolumn{1}{l|}{5.48}        & \multicolumn{1}{l|}{6.59}        & \multicolumn{1}{l|}{7.49}        & \multicolumn{1}{l|}{8.13}     & \multicolumn{1}{l|}{9.25}     & \multicolumn{1}{l|}{9.82}     & \multicolumn{1}{l|}{10.13}    &          \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{0.43}        & \multicolumn{1}{l|}{0.84}        & \multicolumn{1}{l|}{1.3}         & \multicolumn{1}{l|}{2.2}         & \multicolumn{1}{l|}{2.95}        & \multicolumn{1}{l|}{3.5}      & \multicolumn{1}{l|}{4.43}     & \multicolumn{1}{l|}{4.9}      & \multicolumn{1}{l|}{5.15}     &          \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{3.75}        & \multicolumn{1}{l|}{4.02}        & \multicolumn{1}{l|}{4.15}        & \multicolumn{1}{l|}{4.33}        & \multicolumn{1}{l|}{4.47}        & \multicolumn{1}{l|}{4.58}     & \multicolumn{1}{l|}{4.73}     & \multicolumn{1}{l|}{4.86}     & \multicolumn{1}{l|}{4.9}      &          \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.007978723} & \multicolumn{1}{l|}{0.008553191} & \multicolumn{1}{l|}{0.008829787} & \multicolumn{1}{l|}{0.009212766} & \multicolumn{1}{l|}{0.009510638} & \multicolumn{1}{l|}{0.009745} & \multicolumn{1}{l|}{0.010064} & \multicolumn{1}{l|}{0.01034}  & \multicolumn{1}{l|}{0.010426} &          \\ \hline
+\multicolumn{11}{|c|}{Vi=1.9}                                                                                                                                                                                                                                                                                                                         \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{0.4}         & \multicolumn{1}{l|}{1.13}        & \multicolumn{1}{l|}{2.3}         & \multicolumn{1}{l|}{3.17}        & \multicolumn{1}{l|}{4.38}        & \multicolumn{1}{l|}{5.29}     & \multicolumn{1}{l|}{6.68}     & \multicolumn{1}{l|}{7.3}      & \multicolumn{1}{l|}{7.76}     & 8.19     \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{0.008}       & \multicolumn{1}{l|}{0.026}       & \multicolumn{1}{l|}{0.06}        & \multicolumn{1}{l|}{0.09}        & \multicolumn{1}{l|}{0.143}       & \multicolumn{1}{l|}{0.2}      & \multicolumn{1}{l|}{0.37}     & \multicolumn{1}{l|}{0.5}      & \multicolumn{1}{l|}{0.77}     & 1.02     \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{0.39}        & \multicolumn{1}{l|}{1.1}         & \multicolumn{1}{l|}{2.23}        & \multicolumn{1}{l|}{3.07}        & \multicolumn{1}{l|}{4.24}        & \multicolumn{1}{l|}{5.09}     & \multicolumn{1}{l|}{6.3}      & \multicolumn{1}{l|}{6.75}     & \multicolumn{1}{l|}{6.97}     & 7.14     \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.000829787} & \multicolumn{1}{l|}{0.002340426} & \multicolumn{1}{l|}{0.004744681} & \multicolumn{1}{l|}{0.006531915} & \multicolumn{1}{l|}{0.009021277} & \multicolumn{1}{l|}{0.01083}  & \multicolumn{1}{l|}{0.013404} & \multicolumn{1}{l|}{0.014362} & \multicolumn{1}{l|}{0.01483}  & 0.015191 \\ \hline
+\multicolumn{1}{|l|}{V+}    & \multicolumn{1}{l|}{8.49}        & \multicolumn{1}{l|}{9.72}        & \multicolumn{1}{l|}{10.26}       & \multicolumn{1}{l|}{11.19}       & \multicolumn{1}{l|}{12.23}       & \multicolumn{1}{l|}{12.82}    & \multicolumn{1}{l|}{13.26}    & \multicolumn{1}{l|}{13.67}    & \multicolumn{1}{l|}{13.87}    & 14.1     \\ \hline
+\multicolumn{1}{|l|}{VDS}   & \multicolumn{1}{l|}{1.43}        & \multicolumn{1}{l|}{2.05}        & \multicolumn{1}{l|}{2.44}        & \multicolumn{1}{l|}{3.2}         & \multicolumn{1}{l|}{3.9}         & \multicolumn{1}{l|}{4.33}     & \multicolumn{1}{l|}{4.6}      & \multicolumn{1}{l|}{4.93}     & \multicolumn{1}{l|}{5.05}     & 5.22     \\ \hline
+\multicolumn{1}{|l|}{VR\_D} & \multicolumn{1}{l|}{7.33}        & \multicolumn{1}{l|}{7.6}         & \multicolumn{1}{l|}{7.75}        & \multicolumn{1}{l|}{7.94}        & \multicolumn{1}{l|}{8.24}        & \multicolumn{1}{l|}{8.42}     & \multicolumn{1}{l|}{8.58}     & \multicolumn{1}{l|}{8.66}     & \multicolumn{1}{l|}{8.74}     & 8.82     \\ \hline
+\multicolumn{1}{|l|}{I\_D}  & \multicolumn{1}{l|}{0.015595745} & \multicolumn{1}{l|}{0.016170213} & \multicolumn{1}{l|}{0.016489362} & \multicolumn{1}{l|}{0.016893617} & \multicolumn{1}{l|}{0.017531915} & \multicolumn{1}{l|}{0.017915} & \multicolumn{1}{l|}{0.018255} & \multicolumn{1}{l|}{0.018426} & \multicolumn{1}{l|}{0.018596} & 0.018766 \\ \hline
+\end{tabular}%
+}
+\end{table}
+\FloatBarrier
+The relationship between $V_{DS}$ and $I_D$ of different $V_{GS}$:\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/l8_1.6V.png}
+        \caption{Relationship between $V_{DS}$ and $I_D$ ($V_{GS}=1.6V$)}
+        \label{l816v}
+    \end{figure}
+\FloatBarrier
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/l8_1.7V.png}
+        \caption{Relationship between $V_{DS}$ and $I_D$ ($V_{GS}=1.7V$)}
+        \label{l817v}
+    \end{figure}
+\FloatBarrier
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/l8_1.8V.png}
+        \caption{Relationship between $V_{DS}$ and $I_D$ ($V_{GS}=1.8V$)}
+        \label{l818v}
+    \end{figure}
+\FloatBarrier
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Lab08/l8_1.9V.png}
+        \caption{Relationship between $V_{DS}$ and $I_D$ ($V_{GS}=1.9V$)}
+        \label{l819v}
+    \end{figure}
+\FloatBarrier
+Based on the data measured, with calculation, we estimate $V_A$ is 0.0143.
 
 
 \section{Conclusion}
+This experiment focus on the properties of an n-channel enhancement MOSFET, the experiment deepen our understanding of MOSFET's electrical behavior.\par
+We analyzed the measured data to obtain estimate $V_{TN}$, $K_n$, and $V_A$ in this experiment, these help us to think and learn more about the properties of the MOSFET, such as the MOSFET's operating regions.\par
+This knowledge is critical for applications in digital and analog electronics, where MOSFETs are fundamental components in micro-circuits and amplification.
